@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecobazar — Organic Food Store | Home 3</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00B207', 'primary-dark': '#2C742F', 'primary-hard': '#008A00',
+            dark: '#1A1A1A', 'dark-night': '#191C1F', accent: '#FF8A00', sale: '#EA4B48',
+            'gray-soft': '#F2F2F2', 'gray-line': '#E6E6E6',
+          },
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+          maxWidth: { container: '1320px' },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="custom-style.css" />
+</head>
+
+<body class="font-sans text-dark bg-white">
+
+  <!-- ============================================================
+       NAV BAR  (shared)
+       ============================================================ -->
+  <header>
+    <div class="border-b border-gray-line">
+      <div class="max-w-container mx-auto px-4 flex items-center justify-between h-9 text-xs text-gray-500">
+        <p class="flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 1114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Store Location: Lincoln- 344, Illinois, Chicago, USA
+        </p>
+        <div class="flex items-center gap-4">
+          <select class="bg-transparent text-xs outline-none cursor-pointer"><option>Eng</option><option>বাংলা</option></select>
+          <select class="bg-transparent text-xs outline-none cursor-pointer"><option>USD</option><option>BDT</option></select>
+          <span class="text-gray-300">|</span>
+          <a href="login.html" class="hover:text-primary">Sign In</a><span>/</span><a href="signup.html" class="hover:text-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-container mx-auto px-4 flex items-center gap-6 py-5">
+      <a href="index.html" class="flex items-center gap-2 shrink-0">
+        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 6 4 6 4 13a8 8 0 008 8c0-7-3-9-3-9 4 0 7 3 7 9a8 8 0 003-15c-4 0-6 0-9-4z"/></svg>
+        <span class="text-2xl font-bold text-dark">Ecobazar</span>
+      </a>
+      <div class="flex-1 hidden md:flex items-center border border-gray-line rounded-md overflow-hidden">
+        <span class="pl-4 text-gray-400"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+        <input type="text" placeholder="Search" class="flex-1 px-3 py-3 text-sm outline-none" />
+        <button class="bg-primary text-white text-sm font-semibold px-7 py-3 m-1 rounded">Search</button>
+      </div>
+      <div class="flex items-center gap-5 shrink-0">
+        <a href="wishlist.html" class="text-dark hover:text-primary"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 000-7.8z"/></svg></a>
+        <span class="text-gray-line">|</span>
+        <a href="cart.html" class="flex items-center gap-2">
+          <span class="relative">
+            <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg>
+            <span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full grid place-items-center">2</span>
+          </span>
+          <span class="hidden lg:block text-xs"><span class="text-gray-400 block">Shopping cart:</span><span class="font-semibold text-dark">$57.00</span></span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="bg-dark-night text-white">
+      <div class="max-w-container mx-auto px-4 flex items-center justify-between h-14">
+        <button data-menu-open aria-label="Open menu" class="lg:hidden flex items-center gap-2 text-sm font-medium">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          Menu
+        </button>
+        <ul class="hidden lg:flex items-center gap-7 text-sm font-medium">
+          <li class="has-dropdown relative">
+            <a href="index.html" class="flex items-center gap-1 py-4 text-primary">Home <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+            <ul class="dropdown-menu absolute left-0 top-full bg-white text-dark rounded-md shadow-xl py-2 w-48 z-30">
+              <li><a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Home Default</a></li>
+              <li><a href="home-2.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Home Box Layout</a></li>
+              <li><a href="home-3.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Home Full Width</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown relative">
+            <a href="shop.html" class="flex items-center gap-1 py-4 hover:text-primary">Shop <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+            <ul class="dropdown-menu absolute left-0 top-full bg-white text-dark rounded-md shadow-xl py-2 w-48 z-30">
+              <li><a href="shop.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Shop Grid</a></li>
+              <li><a href="product-details.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Product Details</a></li>
+              <li><a href="cart.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Cart</a></li>
+              <li><a href="checkout.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Checkout</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown relative">
+            <a href="#" class="flex items-center gap-1 py-4 hover:text-primary">Pages <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+            <ul class="dropdown-menu absolute left-0 top-full bg-white text-dark rounded-md shadow-xl py-2 w-48 z-30">
+              <li><a href="about.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">About Us</a></li>
+              <li><a href="contact.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Contact Us</a></li>
+              <li><a href="wishlist.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Wishlist</a></li>
+              <li><a href="login.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Login</a></li>
+              <li><a href="signup.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Sign Up</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown relative">
+            <a href="blog.html" class="flex items-center gap-1 py-4 hover:text-primary">Blog <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+            <ul class="dropdown-menu absolute left-0 top-full bg-white text-dark rounded-md shadow-xl py-2 w-48 z-30">
+              <li><a href="blog.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Blog Grid</a></li>
+              <li><a href="blog-details.html" class="block px-4 py-2 text-sm hover:bg-gray-soft hover:text-primary">Blog Details</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="py-4 hover:text-primary">About Us</a></li>
+          <li><a href="contact.html" class="py-4 hover:text-primary">Contact Us</a></li>
+        </ul>
+        <a href="tel:2195550114" class="hidden md:flex items-center gap-2 text-sm">
+          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+          (219) 555-0114
+        </a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       HERO  (light, big type)
+       ============================================================ -->
+  <section class="max-w-container mx-auto px-4 pt-8">
+    <div class="hp3-hero rounded-xl relative overflow-hidden">
+      <div class="grid lg:grid-cols-2 items-center">
+        <div class="p-8 sm:p-14">
+          <p class="text-primary text-xs font-semibold tracking-widest uppercase">Welcome to shopery</p>
+          <h1 class="text-dark text-4xl sm:text-6xl font-bold leading-tight mt-3">Fresh &amp; Healthy Organic Food</h1>
+          <p class="mt-4 text-2xl font-semibold text-dark">Sale up to <span class="text-accent">30% OFF</span></p>
+          <p class="text-sm text-gray-500 mt-2">Free shipping on all your order. we deliver, you enjoy</p>
+          <a href="shop.html" class="mt-6 inline-flex items-center gap-2 bg-primary text-white font-semibold text-sm px-7 py-3.5 rounded-full hover:bg-primary-dark transition">
+            Shop now <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="grid place-items-center p-8">
+          <img src="https://placehold.co/520x420/transparent/cccccc?text=Hero+Basket" alt="Fresh organic food basket" class="w-full max-w-md object-contain" />
+        </div>
+      </div>
+      <!-- slider dots -->
+      <div class="flex justify-center gap-2 pb-6">
+        <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+        <span class="w-6 h-2 rounded-full bg-primary"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+      </div>
+    </div>
+
+    <!-- service feature strip -->
+    <div class="bg-white border border-gray-line rounded-xl shadow-sm -mt-2 relative z-10 mx-2 sm:mx-8 grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-line">
+      <div class="flex items-center gap-3 p-5">
+        <svg class="w-9 h-9 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M1 3h13v13H1zM14 8h5l3 3v5h-8M5.5 21a2 2 0 100-4 2 2 0 000 4zM17.5 21a2 2 0 100-4 2 2 0 000 4z"/></svg>
+        <div><h4 class="font-semibold text-sm text-dark">Free Shipping</h4><p class="text-xs text-gray-500">Free shipping on all your order</p></div>
+      </div>
+      <div class="flex items-center gap-3 p-5">
+        <svg class="w-9 h-9 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+        <div><h4 class="font-semibold text-sm text-dark">Customer Support 24/7</h4><p class="text-xs text-gray-500">Instant access to Support</p></div>
+      </div>
+      <div class="flex items-center gap-3 p-5">
+        <svg class="w-9 h-9 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div><h4 class="font-semibold text-sm text-dark">100% Secure Payment</h4><p class="text-xs text-gray-500">We ensure your money is save</p></div>
+      </div>
+      <div class="flex items-center gap-3 p-5">
+        <svg class="w-9 h-9 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 16V8l-9-5-9 5v8l9 5z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>
+        <div><h4 class="font-semibold text-sm text-dark">Money-Back Guarantee</h4><p class="text-xs text-gray-500">30 Days Money-Back Guarantee</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FEATURED PRODUCTS  (centered title)
+       ============================================================ -->
+  <section class="max-w-container mx-auto px-4 py-14">
+    <h2 class="title-underline text-2xl sm:text-3xl font-bold text-dark text-center mb-8">Featured Products</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <article class="product-card relative border border-gray-line rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Green+Apple" alt="Green Apple" class="w-full h-44 object-contain" /></div><h3 class="text-sm text-dark mt-3">Green Apple</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-gray-soft rounded-full hover:bg-primary hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+      <article class="product-card relative border border-gray-line rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Cabbage" alt="Chanise Cabbage" class="w-full h-44 object-contain" /></div><h3 class="text-sm text-dark mt-3">Chanise Cabbage</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-gray-soft rounded-full hover:bg-primary hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+      <article class="product-card relative border border-gray-line rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Lettuce" alt="Green Lettuce" class="w-full h-44 object-contain" /></div><h3 class="text-sm text-dark mt-3">Green Lettuce</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-gray-soft rounded-full hover:bg-primary hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+      <article class="product-card relative border border-primary rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Green+Chili" alt="Green Chili" class="w-full h-44 object-contain" /><div class="product-actions absolute top-1 right-1 flex flex-col gap-2"><button aria-label="Wishlist" class="w-9 h-9 grid place-items-center bg-white shadow rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 000-7.8z"/></svg></button><button aria-label="Quick view" class="w-9 h-9 grid place-items-center bg-white shadow rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div><h3 class="text-sm text-dark mt-3">Green Chili</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-primary rounded-full text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+      <article class="product-card relative border border-gray-line rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Corn" alt="Corn" class="w-full h-44 object-contain" /></div><h3 class="text-sm text-dark mt-3">Corn</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-gray-soft rounded-full hover:bg-primary hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+    </div>
+
+    <!-- Hot Deals / Best Seller / Top Rated + promo -->
+    <div class="grid lg:grid-cols-4 gap-6 mt-10">
+      <!-- column: Hot Deals -->
+      <div>
+        <h3 class="font-semibold text-dark mb-3">Hot Deals</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 border border-primary rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Apple" alt="Green Apple" class="w-16 h-16 object-contain" /><div><p class="text-sm text-primary">Green Apple</p><p class="text-sm font-semibold">$14.99</p><div class="text-accent text-xs">★★★★<span class="text-gray-300">★</span></div></div></div>
+          <div class="flex items-center gap-3 border border-primary rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Malta" alt="Indian Malta" class="w-16 h-16 object-contain" /><div><p class="text-sm text-dark">Indian Malta</p><div class="flex gap-1 mt-1"><span class="w-7 h-7 grid place-items-center bg-primary rounded-full text-white"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/></svg></span><span class="w-7 h-7 grid place-items-center bg-gray-soft rounded-full"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/></svg></span><span class="w-7 h-7 grid place-items-center bg-gray-soft rounded-full"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 000-7.8z"/></svg></span></div></div></div>
+          <div class="flex items-center gap-3 border border-gray-line rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Lettuce" alt="Green Lettuce" class="w-16 h-16 object-contain" /><div><p class="text-sm text-dark">Green Lettuce</p><p class="text-sm font-semibold">$14.99</p><div class="text-accent text-xs">★★★★<span class="text-gray-300">★</span></div></div></div>
+        </div>
+      </div>
+      <!-- column: Best Seller -->
+      <div>
+        <h3 class="font-semibold text-dark mb-3">Best Seller</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 border border-gray-line rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Eggplant" alt="Eggplant" class="w-16 h-16 object-contain" /><div><p class="text-sm text-dark">Eggplant</p><p class="text-sm font-semibold">$14.99</p><div class="text-accent text-xs">★★★★<span class="text-gray-300">★</span></div></div></div>
+          <div class="flex items-center gap-3 border border-gray-line rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Rush" alt="Rush" class="w-16 h-16 object-contain" /><div><p class="text-sm text-dark">Rush</p><p class="text-sm"><span class="font-semibold">$14.99</span> <span class="text-gray-400 line-through text-xs">$20.99</span></p><div class="text-accent text-xs">★★★★<span class="text-gray-300">★</span></div></div></div>
+          <div class="flex items-center gap-3 border border-gray-line rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Tomato" alt="Red Tomatos" class="w-16 h-16 object-contain" /><div><p class="text-sm text-dark">Red Tomatos</p><p class="text-sm font-semibold">$14.99</p><div class="text-accent text-xs">★★★★<span class="text-gray-300">★</span></div></div></div>
+        </div>
+      </div>
+      <!-- column: Top Rated -->
+      <div>
+        <h3 class="font-semibold text-dark mb-3">Top Rated</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 border border-gray-line rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Potato" alt="Big Potatos" class="w-16 h-16 object-contain" /><div><p class="text-sm text-dark">Big Potatos</p><p class="text-sm font-semibold">$14.99</p><div class="text-accent text-xs">★★★★<span class="text-gray-300">★</span></div></div></div>
+          <div class="flex items-center gap-3 border border-gray-line rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Corn" alt="Corn" class="w-16 h-16 object-contain" /><div><p class="text-sm text-dark">Corn</p><p class="text-sm"><span class="font-semibold">$14.99</span> <span class="text-gray-400 line-through text-xs">$20.99</span></p><div class="text-accent text-xs">★★★★<span class="text-gray-300">★</span></div></div></div>
+          <div class="flex items-center gap-3 border border-gray-line rounded-lg p-2"><img src="https://placehold.co/70x70/ffffff/dddddd?text=Cauli" alt="Fresh cauliflower" class="w-16 h-16 object-contain" /><div><p class="text-sm text-dark">Fresh cauliflower</p><p class="text-sm font-semibold">$14.99</p><div class="text-accent text-xs">★★★★<span class="text-gray-300">★</span></div></div></div>
+        </div>
+      </div>
+      <!-- promo card -->
+      <div class="rounded-lg p-6 text-center flex flex-col items-center justify-center hp3-promo-soft">
+        <p class="text-[11px] font-semibold tracking-widest uppercase text-gray-500">Summer Sale</p>
+        <h3 class="text-3xl font-bold text-primary mt-1">75% off</h3>
+        <a href="shop.html" class="mt-3 inline-flex items-center gap-2 bg-white text-primary text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary hover:text-white transition">
+          Shop Now <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <img src="https://placehold.co/200x160/transparent/cccccc?text=Veggies" alt="Fresh vegetables" class="mt-4 w-40 object-contain" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TOP CATEGORY  (icon style, carousel row)
+       ============================================================ -->
+  <section class="max-w-container mx-auto px-4 pb-14">
+    <h2 class="title-underline text-2xl sm:text-3xl font-bold text-dark text-center mb-8">Top Category</h2>
+    <div class="flex items-center gap-3">
+      <button aria-label="Previous" class="hidden md:grid w-10 h-10 shrink-0 place-items-center border border-gray-line rounded-full text-dark hover:bg-primary hover:text-white transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg></button>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 flex-1">
+        <a href="shop.html" class="category-card is-active border border-gray-line rounded-lg p-5 flex flex-col items-center text-center hover:border-primary transition">
+          <img src="https://placehold.co/70x70/transparent/00B207?text=%F0%9F%A5%AC" alt="Vegetables" class="w-16 h-16 object-contain mb-2" />
+          <span class="text-sm font-medium text-primary">Vegetables</span><span class="text-xs text-gray-400">165 Products</span>
+        </a>
+        <a href="shop.html" class="category-card border border-gray-line rounded-lg p-5 flex flex-col items-center text-center hover:border-primary transition">
+          <img src="https://placehold.co/70x70/transparent/cccccc?text=%F0%9F%8D%8E" alt="Fresh Fruit" class="w-16 h-16 object-contain mb-2" />
+          <span class="text-sm font-medium text-dark">Fresh Fruit</span><span class="text-xs text-gray-400">137 Products</span>
+        </a>
+        <a href="shop.html" class="category-card border border-gray-line rounded-lg p-5 flex flex-col items-center text-center hover:border-primary transition">
+          <img src="https://placehold.co/70x70/transparent/cccccc?text=%F0%9F%90%9F" alt="River Fish" class="w-16 h-16 object-contain mb-2" />
+          <span class="text-sm font-medium text-dark">River Fish</span><span class="text-xs text-gray-400">34 Products</span>
+        </a>
+        <a href="shop.html" class="category-card border border-gray-line rounded-lg p-5 flex flex-col items-center text-center hover:border-primary transition">
+          <img src="https://placehold.co/70x70/transparent/cccccc?text=%F0%9F%A5%A9" alt="Meat" class="w-16 h-16 object-contain mb-2" />
+          <span class="text-sm font-medium text-dark">Meat</span><span class="text-xs text-gray-400">165 Products</span>
+        </a>
+        <a href="shop.html" class="category-card border border-gray-line rounded-lg p-5 flex flex-col items-center text-center hover:border-primary transition">
+          <img src="https://placehold.co/70x70/transparent/cccccc?text=%F0%9F%A5%A4" alt="Water and Drinks" class="w-16 h-16 object-contain mb-2" />
+          <span class="text-sm font-medium text-dark">Water and Drinks</span><span class="text-xs text-gray-400">48 Products</span>
+        </a>
+        <a href="shop.html" class="category-card border border-gray-line rounded-lg p-5 flex flex-col items-center text-center hover:border-primary transition">
+          <img src="https://placehold.co/70x70/transparent/cccccc?text=%F0%9F%8D%AA" alt="Snacks" class="w-16 h-16 object-contain mb-2" />
+          <span class="text-sm font-medium text-dark">Snacks</span><span class="text-xs text-gray-400">165 Products</span>
+        </a>
+      </div>
+      <button aria-label="Next" class="hidden md:grid w-10 h-10 shrink-0 place-items-center border border-gray-line rounded-full text-dark hover:bg-primary hover:text-white transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROMO BANNERS (3 up)
+       ============================================================ -->
+  <section class="max-w-container mx-auto px-4 pb-14">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-xl p-7 text-center text-white min-h-[260px] flex flex-col items-center promo-blue">
+        <p class="text-[11px] font-semibold tracking-widest uppercase">Best Deals</p>
+        <h3 class="text-2xl font-bold mt-1">Sale of the Month</h3>
+        <div class="flex gap-2 mt-3 text-sm font-semibold">
+          <span class="text-center"><span class="block text-lg">00</span><span class="text-[10px] font-normal">DAYS</span></span><span>:</span>
+          <span class="text-center"><span class="block text-lg">02</span><span class="text-[10px] font-normal">HOURS</span></span><span>:</span>
+          <span class="text-center"><span class="block text-lg">18</span><span class="text-[10px] font-normal">MINS</span></span><span>:</span>
+          <span class="text-center"><span class="block text-lg">46</span><span class="text-[10px] font-normal">SECS</span></span>
+        </div>
+        <a href="shop.html" class="mt-4 inline-flex items-center gap-2 bg-white text-dark text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary hover:text-white transition">Shop Now <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rounded-xl p-7 text-center text-white min-h-[260px] flex flex-col items-center bg-dark">
+        <p class="text-[11px] font-semibold tracking-widest uppercase">85% Fat Free</p>
+        <h3 class="text-2xl font-bold mt-1">Low-Fat Meat</h3>
+        <p class="text-sm mt-2">Started at <span class="text-accent font-semibold">$79.99</span></p>
+        <a href="shop.html" class="mt-4 inline-flex items-center gap-2 bg-white text-primary text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary hover:text-white transition">Shop Now <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="rounded-xl p-7 text-center text-dark min-h-[260px] flex flex-col items-center promo-yellow">
+        <p class="text-[11px] font-semibold tracking-widest uppercase">Summer Sale</p>
+        <h3 class="text-2xl font-bold mt-1">100% Fresh Fruit</h3>
+        <p class="text-sm mt-2">Up to <span class="bg-dark text-white font-semibold px-2 py-0.5 rounded">64% OFF</span></p>
+        <a href="shop.html" class="mt-4 inline-flex items-center gap-2 bg-white text-primary text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary hover:text-white transition">Shop Now <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       NEWEST PRODUCTS
+       ============================================================ -->
+  <section class="max-w-container mx-auto px-4 pb-14">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-dark">Newest Products</h2>
+      <a href="shop.html" class="inline-flex items-center gap-1 text-primary font-semibold text-sm">View All <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <article class="product-card relative border border-gray-line rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Green+Apple" alt="Green Appl" class="w-full h-44 object-contain" /></div><h3 class="text-sm text-dark mt-3">Green Appl</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-gray-soft rounded-full hover:bg-primary hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+      <article class="product-card relative border border-gray-line rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Cabbage" alt="Chanise Cabbage" class="w-full h-44 object-contain" /></div><h3 class="text-sm text-dark mt-3">Chanise Cabbage</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-gray-soft rounded-full hover:bg-primary hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+      <article class="product-card relative border border-gray-line rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Lettuce" alt="Green Lettuce" class="w-full h-44 object-contain" /></div><h3 class="text-sm text-dark mt-3">Green Lettuce</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-gray-soft rounded-full hover:bg-primary hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+      <article class="product-card relative border border-primary rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Green+Chili" alt="Green Chili" class="w-full h-44 object-contain" /><div class="product-actions absolute top-1 right-1 flex flex-col gap-2"><button aria-label="Wishlist" class="w-9 h-9 grid place-items-center bg-white shadow rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 000-7.8z"/></svg></button></div></div><h3 class="text-sm text-dark mt-3">Green Chili</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-primary rounded-full text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+      <article class="product-card relative border border-gray-line rounded-lg p-3"><div class="relative"><img src="https://placehold.co/220x200/ffffff/dddddd?text=Corn" alt="Corn" class="w-full h-44 object-contain" /></div><h3 class="text-sm text-dark mt-3">Corn</h3><div class="flex items-center justify-between mt-1"><p class="text-sm font-semibold">$14.99</p><button aria-label="Add to cart" class="w-8 h-8 grid place-items-center bg-gray-soft rounded-full hover:bg-primary hover:text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></button></div><div class="flex gap-0.5 mt-1 text-accent">★★★★<span class="text-gray-300">★</span></div></article>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CLIENT TESTIMONIAL  (gray background, centered title)
+       ============================================================ -->
+  <section class="bg-gray-soft py-14">
+    <div class="max-w-container mx-auto px-4">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="title-underline-left text-2xl sm:text-3xl font-bold text-dark">Client Testimonial</h2>
+        <div class="flex gap-2">
+          <button aria-label="Previous" class="w-10 h-10 grid place-items-center bg-white rounded-full text-dark hover:bg-primary hover:text-white transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg></button>
+          <button aria-label="Next" class="w-10 h-10 grid place-items-center bg-primary rounded-full text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="bg-white rounded-lg p-6"><span class="text-primary text-5xl leading-none font-serif">&ldquo;</span><blockquote class="text-sm text-gray-500 mt-2">Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales.</blockquote><figcaption class="flex items-center justify-between mt-5 pt-4 border-t border-gray-line"><span class="flex items-center gap-3"><img src="https://placehold.co/48x48/cccccc/ffffff?text=R" alt="Robert Fox" class="w-12 h-12 rounded-full object-cover" /><span><span class="block font-semibold text-dark text-sm">Robert Fox</span><span class="text-xs text-gray-400">Customer</span></span></span><span class="text-accent text-sm">★★★★★</span></figcaption></figure>
+        <figure class="bg-white rounded-lg p-6"><span class="text-primary text-5xl leading-none font-serif">&ldquo;</span><blockquote class="text-sm text-gray-500 mt-2">Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales.</blockquote><figcaption class="flex items-center justify-between mt-5 pt-4 border-t border-gray-line"><span class="flex items-center gap-3"><img src="https://placehold.co/48x48/cccccc/ffffff?text=D" alt="Dianne Russell" class="w-12 h-12 rounded-full object-cover" /><span><span class="block font-semibold text-dark text-sm">Dianne Russell</span><span class="text-xs text-gray-400">Customer</span></span></span><span class="text-accent text-sm">★★★★★</span></figcaption></figure>
+        <figure class="bg-white rounded-lg p-6"><span class="text-primary text-5xl leading-none font-serif">&ldquo;</span><blockquote class="text-sm text-gray-500 mt-2">Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales.</blockquote><figcaption class="flex items-center justify-between mt-5 pt-4 border-t border-gray-line"><span class="flex items-center gap-3"><img src="https://placehold.co/48x48/cccccc/ffffff?text=E" alt="Eleanor Pena" class="w-12 h-12 rounded-full object-cover" /><span><span class="block font-semibold text-dark text-sm">Eleanor Pena</span><span class="text-xs text-gray-400">Customer</span></span></span><span class="text-accent text-sm">★★★★★</span></figcaption></figure>
+      </div>
+      <div class="flex justify-center gap-2 mt-6">
+        <span class="w-2 h-2 rounded-full bg-gray-300"></span><span class="w-2 h-2 rounded-full bg-gray-300"></span>
+        <span class="w-6 h-2 rounded-full bg-primary"></span><span class="w-2 h-2 rounded-full bg-gray-300"></span><span class="w-2 h-2 rounded-full bg-gray-300"></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOLLOW ON INSTAGRAM
+       ============================================================ -->
+  <section class="max-w-container mx-auto px-4 py-14">
+    <h2 class="text-2xl sm:text-3xl font-bold text-dark text-center mb-8">Follow us on Instagram</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <a href="#" class="block rounded-lg overflow-hidden"><img src="https://placehold.co/200x200/8b2e2e/ffffff?text=IG" alt="Instagram post" class="w-full h-44 object-cover hover:scale-105 transition" /></a>
+      <a href="#" class="block rounded-lg overflow-hidden"><img src="https://placehold.co/200x200/2d5a2d/ffffff?text=IG" alt="Instagram post" class="w-full h-44 object-cover hover:scale-105 transition" /></a>
+      <a href="#" class="block rounded-lg overflow-hidden"><img src="https://placehold.co/200x200/3a5a2d/ffffff?text=IG" alt="Instagram post" class="w-full h-44 object-cover hover:scale-105 transition" /></a>
+      <a href="#" class="block rounded-lg overflow-hidden"><img src="https://placehold.co/200x200/1a1a1a/ff8a00?text=IG" alt="Instagram post" class="w-full h-44 object-cover hover:scale-105 transition" /></a>
+      <a href="#" class="block rounded-lg overflow-hidden"><img src="https://placehold.co/200x200/4a7a2d/ffffff?text=IG" alt="Instagram post" class="w-full h-44 object-cover hover:scale-105 transition" /></a>
+      <a href="#" class="block rounded-lg overflow-hidden"><img src="https://placehold.co/200x200/1a1a1a/ffffff?text=IG" alt="Instagram post" class="w-full h-44 object-cover hover:scale-105 transition" /></a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       NEWSLETTER  (shared)
+       ============================================================ -->
+  <section class="hp1-newsletter">
+    <div class="max-w-container mx-auto px-4 py-10 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="text-2xl font-bold text-dark">Subscribe our Newsletter</h3>
+        <p class="text-sm text-gray-500 mt-1 max-w-md">Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</p>
+      </div>
+      <div class="flex w-full bg-white rounded-full overflow-hidden p-1">
+        <input type="email" placeholder="Your email address" class="flex-1 px-5 py-2.5 text-sm outline-none" />
+        <button class="bg-primary text-white text-sm font-semibold px-7 py-2.5 rounded-full hover:bg-primary-dark transition">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER  (shared)
+       ============================================================ -->
+  <footer class="bg-dark-night text-gray-300">
+    <div class="max-w-container mx-auto px-4 py-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div class="lg:col-span-2 max-w-xs">
+        <a href="index.html" class="flex items-center gap-2">
+          <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 6 4 6 4 13a8 8 0 008 8c0-7-3-9-3-9 4 0 7 3 7 9a8 8 0 003-15c-4 0-6 0-9-4z"/></svg>
+          <span class="text-2xl font-bold text-white">Ecobazar</span>
+        </a>
+        <p class="text-sm text-gray-400 mt-4">Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.</p>
+        <p class="mt-4 text-sm"><a href="tel:2195550114" class="text-white border-b border-primary pb-0.5">(219) 555-0114</a> <span class="text-gray-500">or</span> <a href="mailto:Proxy@gmail.com" class="text-white border-b border-primary pb-0.5">Proxy@gmail.com</a></p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">My Account</h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li><a href="#" class="hover:text-primary">My Account</a></li>
+          <li><a href="#" class="hover:text-primary">Order History</a></li>
+          <li><a href="cart.html" class="hover:text-primary">Shoping Cart</a></li>
+          <li><a href="wishlist.html" class="hover:text-primary">Wishlist</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Helps</h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+          <li><a href="#" class="hover:text-primary">Faqs</a></li>
+          <li><a href="#" class="hover:text-primary">Terms &amp; Condition</a></li>
+          <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Proxy</h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li><a href="about.html" class="hover:text-primary">About</a></li>
+          <li><a href="shop.html" class="hover:text-primary">Shop</a></li>
+          <li><a href="shop.html" class="hover:text-primary">Product</a></li>
+          <li><a href="product-details.html" class="hover:text-primary">Track Order</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-container mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+        <p>Ecobazar eCommerce &copy; 2021. All Rights Reserved</p>
+        <div class="flex items-center gap-2">
+          <span class="bg-white text-dark text-[10px] font-semibold px-2 py-1 rounded">Pay</span>
+          <span class="bg-white text-dark text-[10px] font-semibold px-2 py-1 rounded">VISA</span>
+          <span class="bg-white text-dark text-[10px] font-semibold px-2 py-1 rounded">Discover</span>
+          <span class="bg-white text-dark text-[10px] font-semibold px-2 py-1 rounded">MC</span>
+          <span class="bg-white text-dark text-[10px] font-semibold px-2 py-1 rounded">Secure</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       MOBILE MENU DRAWER  (shared — toggled by main.js)
+       ============================================================ -->
+  <div id="mobileBackdrop" class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-opacity duration-300 lg:hidden"></div>
+  <aside id="mobileMenu" class="fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white z-50 -translate-x-full transition-transform duration-300 lg:hidden flex flex-col">
+    <div class="flex items-center justify-between p-4 border-b border-gray-line">
+      <a href="index.html" class="flex items-center gap-2">
+        <svg class="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 6 4 6 4 13a8 8 0 008 8c0-7-3-9-3-9 4 0 7 3 7 9a8 8 0 003-15c-4 0-6 0-9-4z"/></svg>
+        <span class="text-xl font-bold text-dark">Ecobazar</span>
+      </a>
+      <button data-menu-close aria-label="Close menu" class="w-9 h-9 grid place-items-center rounded-full text-dark hover:bg-gray-soft">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-4">
+      <ul class="space-y-1 text-sm font-medium text-dark">
+        <li>
+          <button data-accordion class="w-full flex items-center justify-between py-2.5">Home
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul data-panel class="hidden pl-4 pb-2 space-y-1 text-gray-500">
+            <li><a href="index.html" class="block py-1.5 hover:text-primary">Home Default</a></li>
+            <li><a href="home-2.html" class="block py-1.5 hover:text-primary">Home Box Layout</a></li>
+            <li><a href="home-3.html" class="block py-1.5 hover:text-primary">Home Full Width</a></li>
+          </ul>
+        </li>
+        <li>
+          <button data-accordion class="w-full flex items-center justify-between py-2.5">Shop
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul data-panel class="hidden pl-4 pb-2 space-y-1 text-gray-500">
+            <li><a href="shop.html" class="block py-1.5 hover:text-primary">Shop Grid</a></li>
+            <li><a href="product-details.html" class="block py-1.5 hover:text-primary">Product Details</a></li>
+            <li><a href="cart.html" class="block py-1.5 hover:text-primary">Cart</a></li>
+            <li><a href="checkout.html" class="block py-1.5 hover:text-primary">Checkout</a></li>
+          </ul>
+        </li>
+        <li>
+          <button data-accordion class="w-full flex items-center justify-between py-2.5">Pages
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul data-panel class="hidden pl-4 pb-2 space-y-1 text-gray-500">
+            <li><a href="about.html" class="block py-1.5 hover:text-primary">About Us</a></li>
+            <li><a href="contact.html" class="block py-1.5 hover:text-primary">Contact Us</a></li>
+            <li><a href="wishlist.html" class="block py-1.5 hover:text-primary">Wishlist</a></li>
+            <li><a href="login.html" class="block py-1.5 hover:text-primary">Login</a></li>
+            <li><a href="signup.html" class="block py-1.5 hover:text-primary">Sign Up</a></li>
+          </ul>
+        </li>
+        <li>
+          <button data-accordion class="w-full flex items-center justify-between py-2.5">Blog
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul data-panel class="hidden pl-4 pb-2 space-y-1 text-gray-500">
+            <li><a href="blog.html" class="block py-1.5 hover:text-primary">Blog Grid</a></li>
+            <li><a href="blog-details.html" class="block py-1.5 hover:text-primary">Blog Details</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="block py-2.5 hover:text-primary">About Us</a></li>
+        <li><a href="contact.html" class="block py-2.5 hover:text-primary">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="p-4 border-t border-gray-line">
+      <a href="tel:2195550114" class="flex items-center gap-2 text-sm text-dark">
+        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+        (219) 555-0114
+      </a>
+    </div>
+  </aside>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

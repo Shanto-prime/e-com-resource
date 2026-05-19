@@ -1,0 +1,188 @@
+/* =====================================================================
+   ECOBAZAR — custom-style.css
+   The ONLY non-Tailwind stylesheet for this project.
+   Everything here is what Tailwind cannot do cleanly.
+   Organised by: GLOBAL  ->  per PAGE  ->  per SECTION.
+   ===================================================================== */
+
+
+/* =====================================================================
+   GLOBAL  (shared by every page)
+   ===================================================================== */
+
+/* -- base / reset start -- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* hide horizontal scrollbar on carousel rows */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* -- base / reset end -- */
+
+/* -- shared: product card hover start -- */
+/* lift + shadow on hover; the floating action buttons fade in.
+   Done in CSS because it needs the .product-card group state. */
+.product-card .product-actions {
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.product-card:hover .product-actions {
+    opacity: 1;
+    transform: translateX(0);
+}
+.product-card:hover {
+    border-color: #00B207;
+}
+/* -- shared: product card hover end -- */
+
+/* -- shared: category card active start -- */
+.category-card.is-active {
+    border-color: #00B207;
+}
+/* -- shared: category card active end -- */
+
+/* -- shared: nav dropdown start -- */
+/* simple CSS hover dropdown for the main menu items */
+.has-dropdown .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+/* -- shared: nav dropdown end -- */
+
+/* -- shared: promo banner colors start -- */
+/* brand promo-block colours that are not part of the Tailwind token set */
+.promo-blue   { background-color: #1976d2; }
+.promo-yellow { background-color: #FFB703; }
+/* -- shared: promo banner colors end -- */
+
+/* -- shared: mobile drawer start -- */
+/* lock body scroll while the mobile menu drawer is open */
+body.menu-open {
+    overflow: hidden;
+}
+/* rotate the chevron of an open accordion item inside the drawer */
+[data-accordion] svg {
+    transition: transform 0.2s ease;
+}
+[data-accordion].is-open svg {
+    transform: rotate(180deg);
+}
+/* -- shared: mobile drawer end -- */
+
+/* -- shared: section title underline start -- */
+/* the small green tick under centered headings (used on Home 3 / Home 2) */
+.title-underline::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #d2efd3 0%, #00B207 50%, #d2efd3 100%);
+}
+.title-underline-left::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #00B207 60%, #d2efd3 100%);
+}
+/* -- shared: section title underline end -- */
+
+
+/* =====================================================================
+   HOME PAGE ONE  (index.html)
+   ===================================================================== */
+
+/* -- home one: hero gradient start -- */
+/* diagonal green gradient behind the main hero banner */
+.hp1-hero-gradient {
+    background: linear-gradient(115deg, #0a4d1c 0%, #14a82d 55%, #1cc63a 100%);
+}
+/* dark leafy promo card on the right of the hero */
+.hp1-hero-leaf {
+    background-color: #173b1c;
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 40%);
+}
+/* -- home one: hero gradient end -- */
+
+/* -- home one: newsletter section start -- */
+.hp1-newsletter {
+    background-color: #f2f2f2;
+}
+/* -- home one: newsletter section end -- */
+
+
+/* =====================================================================
+   HOME PAGE TWO  (home-2.html — box / sidebar layout)
+   ===================================================================== */
+
+/* -- home two: page frame start -- */
+/* the whole page sits inside a centered white "box" on a soft mint field
+   with a faint food-doodle pattern. */
+.hp2-field {
+    background-color: #eaf1ea;
+    background-image:
+        radial-gradient(circle at 6% 12%, rgba(0,178,7,0.10) 0 2px, transparent 3px),
+        radial-gradient(circle at 14% 30%, rgba(0,178,7,0.07) 0 2px, transparent 3px),
+        radial-gradient(circle at 4% 55%, rgba(0,178,7,0.08) 0 2px, transparent 3px),
+        radial-gradient(circle at 95% 18%, rgba(0,178,7,0.09) 0 2px, transparent 3px),
+        radial-gradient(circle at 90% 48%, rgba(0,178,7,0.06) 0 2px, transparent 3px),
+        radial-gradient(circle at 97% 78%, rgba(0,178,7,0.08) 0 2px, transparent 3px);
+}
+/* -- home two: page frame end -- */
+
+/* -- home two: category sidebar start -- */
+.hp2-cat-item.is-active {
+    background-color: #00B207;
+    color: #ffffff;
+}
+/* -- home two: category sidebar end -- */
+
+/* -- home two: hero & video banners start -- */
+.hp2-hero-banner {
+    background-color: #1c4a26;
+}
+.hp2-video-banner {
+    background-color: #2f4a23;
+}
+/* -- home two: hero & video banners end -- */
+
+
+/* =====================================================================
+   HOME PAGE THREE  (home-3.html)
+   ===================================================================== */
+
+/* -- home three: hero start -- */
+.hp3-hero {
+    background-color: #eef1ef;
+}
+/* -- home three: hero end -- */
+
+/* -- home three: featured promo card start -- */
+.hp3-promo-soft {
+    background-color: #f3f4f1;
+}
+/* -- home three: featured promo card end -- */
