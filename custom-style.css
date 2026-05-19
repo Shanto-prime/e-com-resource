@@ -31,8 +31,12 @@ body {
 /* -- base / reset end -- */
 
 /* -- shared: product card hover start -- */
-/* lift + shadow on hover; the floating action buttons fade in.
-   Done in CSS because it needs the .product-card group state. */
+/* the whole card is the hover target: hovering anywhere inside the padded
+   card (border included) activates every interactive element at once. */
+.product-card:hover {
+    border-color: #00B207;
+}
+/* floating wishlist / quick-view buttons fade in */
 .product-card .product-actions {
     opacity: 0;
     transform: translateX(8px);
@@ -42,16 +46,43 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
-.product-card:hover {
-    border-color: #00B207;
+/* add-to-cart button: neutral by default, green when the card is hovered */
+.product-card .cart-btn {
+    background-color: #F2F2F2;
+    color: #1A1A1A;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.product-card:hover .cart-btn {
+    background-color: #00B207;
+    color: #ffffff;
+}
+/* product title: green when the card is hovered */
+.product-card .product-title {
+    transition: color 0.2s ease;
+}
+.product-card:hover .product-title,
+.product-card:hover .product-title a {
+    color: #00B207;
 }
 /* -- shared: product card hover end -- */
 
-/* -- shared: category card active start -- */
-.category-card.is-active {
-    border-color: #00B207;
+/* -- shared: deal row hover start -- */
+/* Hot Deals / Best Seller / Top Rated rows: price + rating by default,
+   action buttons revealed when the row is hovered. */
+.deal-row .deal-actions {
+    display: none;
 }
-/* -- shared: category card active end -- */
+.deal-row:hover .deal-info {
+    display: none;
+}
+.deal-row:hover .deal-actions {
+    display: flex;
+}
+/* -- shared: deal row hover end -- */
+
+/* -- shared: category card note -- */
+/* category cards have no default "active" state — the green border + green
+   label are driven purely by hover (Tailwind hover: / group-hover: classes). */
 
 /* -- shared: nav dropdown start -- */
 /* simple CSS hover dropdown for the main menu items */
@@ -155,10 +186,8 @@ body.menu-open {
 /* -- home two: page frame end -- */
 
 /* -- home two: category sidebar start -- */
-.hp2-cat-item.is-active {
-    background-color: #00B207;
-    color: #ffffff;
-}
+/* sidebar "filter category" items have no default active state — green
+   highlight on hover only (Tailwind hover: classes on each item). */
 /* -- home two: category sidebar end -- */
 
 /* -- home two: hero & video banners start -- */
