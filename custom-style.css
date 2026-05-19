@@ -105,9 +105,10 @@ body {
 .promo-yellow { background-color: #FFB703; }
 /* -- shared: promo banner colors end -- */
 
-/* -- shared: mobile drawer start -- */
-/* lock body scroll while the mobile menu drawer is open */
-body.menu-open {
+/* -- shared: overlay scroll lock start -- */
+/* lock body scroll while any overlay (mobile menu, cart drawer,
+   quick-view modal) is open */
+body.no-scroll {
     overflow: hidden;
 }
 /* rotate the chevron of an open accordion item inside the drawer */
@@ -117,7 +118,7 @@ body.menu-open {
 [data-accordion].is-open svg {
     transform: rotate(180deg);
 }
-/* -- shared: mobile drawer end -- */
+/* -- shared: overlay scroll lock end -- */
 
 /* -- shared: section title underline start -- */
 /* the small green tick under centered headings (used on Home 3 / Home 2) */
