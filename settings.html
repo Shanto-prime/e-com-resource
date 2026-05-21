@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ecobazar — Contact</title>
+  <title>Ecobazar — Settings</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -153,54 +153,139 @@
     </nav>
   </header>
 
-  <!-- breadcrumb banner -->
   <section class="relative bg-dark-night overflow-hidden">
     <img src="https://placehold.co/1600x300/14210f/24331a?text=+" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50" />
     <div class="relative max-w-container mx-auto px-4 py-10 md:py-14">
       <nav aria-label="Breadcrumb" class="flex items-center flex-wrap gap-2 text-sm text-gray-300">
         <a href="index.html" class="hover:text-primary inline-flex items-center" aria-label="Home"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></a>
         <span class="text-gray-500">›</span>
-        <span class="text-primary">Contact</span>
+        <span class="text-primary">Account</span>
+        <span class="text-gray-500">›</span>
+        <span class="text-primary">Settings</span>
       </nav>
     </div>
   </section>
 
   <main class="max-w-container mx-auto px-4 py-12 md:py-16">
-    <div class="grid lg:grid-cols-3 gap-6 items-start">
-      <div class="border border-gray-line rounded-xl px-6 divide-y divide-gray-line">
-        <div class="py-6 text-center">
-          <span class="w-12 h-12 mx-auto grid place-items-center bg-primary/10 text-primary rounded-full mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 1114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <p class="text-sm text-gray-600">2715 Ash Dr. San Jose, South</p><p class="text-sm text-gray-600">Dakota 83475</p>
-        </div>
-        <div class="py-6 text-center">
-          <span class="w-12 h-12 mx-auto grid place-items-center bg-primary/10 text-primary rounded-full mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-          <p class="text-sm text-gray-600">Proxy@gmail.com</p><p class="text-sm text-gray-600">Help.proxy@gmail.com</p>
-        </div>
-        <div class="py-6 text-center">
-          <span class="w-12 h-12 mx-auto grid place-items-center bg-primary/10 text-primary rounded-full mb-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg></span>
-          <p class="text-sm text-gray-600">(219) 555-0114</p><p class="text-sm text-gray-600">(164) 333-0487</p>
-        </div>
-      </div>
-      <div class="lg:col-span-2 border border-gray-line rounded-xl p-6 md:p-8">
-        <h1 class="text-2xl font-bold text-dark">Just Say Hello!</h1>
-        <p class="text-sm text-gray-500 mt-2 max-w-xl">Do you fancy saying hi to me or you want to get started with your project and you need my help? Feel free to contact me.</p>
-        <form onsubmit="return false" class="mt-6 space-y-4">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <input type="text" name="name" placeholder="Your name" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
-            <input type="email" name="email" autocomplete="email" placeholder="Your email" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+    <div class="grid lg:grid-cols-[260px_1fr] gap-6 items-start">
+      <aside class="bg-white border border-gray-line rounded-lg p-2 self-start">
+      <h2 class="text-base font-semibold text-dark px-3 pt-2 pb-3">Navigation</h2>
+      <nav class="space-y-1">
+        <a href="dashboard.html" class="flex items-center gap-3 pl-4 pr-3 py-2.5 text-sm border-l-4 border-transparent text-gray-500 hover:text-dark hover:bg-gray-soft transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> <span>Dashboard</span></a>
+        <a href="order-history.html" class="flex items-center gap-3 pl-4 pr-3 py-2.5 text-sm border-l-4 border-transparent text-gray-500 hover:text-dark hover:bg-gray-soft transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12a9 9 0 109-9 9 9 0 00-6.4 2.7L3 8M3 3v5h5"/><path d="M12 7v5l3 2"/></svg> <span>Order History</span></a>
+        <a href="wishlist.html" class="flex items-center gap-3 pl-4 pr-3 py-2.5 text-sm border-l-4 border-transparent text-gray-500 hover:text-dark hover:bg-gray-soft transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 000-7.8z"/></svg> <span>Wishlist</span></a>
+        <a href="cart.html" class="flex items-center gap-3 pl-4 pr-3 py-2.5 text-sm border-l-4 border-transparent text-gray-500 hover:text-dark hover:bg-gray-soft transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg> <span>Shopping Cart</span></a>
+        <a href="settings.html" class="flex items-center gap-3 pl-4 pr-3 py-2.5 text-sm border-l-4 border-primary bg-primary/5 text-dark font-medium transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 01-4 0v-.1a1.7 1.7 0 00-1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 010-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3h0a1.7 1.7 0 001-1.5V3a2 2 0 014 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8v0a1.7 1.7 0 001.5 1H21a2 2 0 010 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg> <span>Settings</span></a>
+        <a href="login.html" class="flex items-center gap-3 pl-4 pr-3 py-2.5 text-sm border-l-4 border-transparent text-gray-500 hover:text-dark hover:bg-gray-soft transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg> <span>Log-out</span></a>
+      </nav>
+    </aside>
+      <div class="space-y-6">
+
+        <section class="bg-white border border-gray-line rounded-lg p-5 md:p-6">
+          <h2 class="text-base font-semibold text-dark mb-5 pb-3 border-b border-gray-line">Account Settings</h2>
+          <div class="grid md:grid-cols-[1fr_220px] gap-6 items-start">
+            <form class="space-y-4" onsubmit="return false">
+                        <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">First name</label>
+            <input type="text" name="first_name" value="Dianne" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
           </div>
-          <input type="text" name="subject" placeholder="Subject" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
-          <textarea name="message" rows="5" placeholder="Your message" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary resize-y"></textarea>
-          <button class="inline-flex items-center gap-2 bg-primary text-white text-sm font-semibold px-7 py-3 rounded-full hover:bg-primary-dark transition">Send Message <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        </form>
+                        <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Last Name</label>
+            <input type="text" name="last_name" value="Russell" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+                        <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Email</label>
+            <input type="email" name="email" value="dianne.russell@gmail.com" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+                        <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Phone Number</label>
+            <input type="tel" name="phone" value="(603) 555-0123" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+              <button class="bg-primary text-white text-sm font-semibold px-7 py-2.5 rounded-full hover:bg-primary-dark transition">Save Changes</button>
+            </form>
+            <div class="text-center md:pt-7">
+              <img src="https://placehold.co/200x200/e6e6e6/999999?text=DR" alt="Profile picture" class="w-32 h-32 mx-auto rounded-full object-cover" />
+              <button type="button" class="inline-block border border-primary text-primary text-sm font-medium px-5 py-2 rounded-full mt-4 hover:bg-primary hover:text-white transition">Chose Image</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white border border-gray-line rounded-lg p-5 md:p-6">
+          <h2 class="text-base font-semibold text-dark mb-5 pb-3 border-b border-gray-line">Billing Address</h2>
+          <form class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" onsubmit="return false">
+                      <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">First name</label>
+            <input type="text" name="bill_first" value="Dianne" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+                      <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Last name</label>
+            <input type="text" name="bill_last" value="Dianne" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+                      <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Company Name <span class="text-gray-400 font-normal">(optional)</span></label>
+            <input type="text" name="company" value="Zakirsoft" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+                      <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Street Address</label>
+            <input type="text" name="street" value="4140 Park" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+                      <div>
+            <label class="block text-sm font-medium text-dark mb-1.5">Country / Region</label>
+            <select name="country" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary bg-white text-dark"><option selected>United States</option><option>Bangladesh</option><option>United Kingdom</option><option>India</option></select>
+          </div>
+                      <div>
+            <label class="block text-sm font-medium text-dark mb-1.5">States</label>
+            <select name="state" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary bg-white text-dark"><option selected>Washington DC</option><option>California</option><option>New York</option><option>Illinois</option></select>
+          </div>
+                      <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Zip Code</label>
+            <input type="text" name="zip" value="20033" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+                      <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Email</label>
+            <input type="email" name="bill_email" value="dianne.russell@gmail.com" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+                      <div class="">
+            <label class="block text-sm font-medium text-dark mb-1.5">Phone</label>
+            <input type="tel" name="bill_phone" value="(603) 555-0123" class="w-full border border-gray-line rounded-md px-4 py-3 text-sm outline-none focus:border-primary" />
+          </div>
+            <button class="sm:col-span-2 lg:col-span-3 justify-self-start bg-primary text-white text-sm font-semibold px-7 py-2.5 rounded-full hover:bg-primary-dark transition">Save Changes</button>
+          </form>
+        </section>
+
+        <section class="bg-white border border-gray-line rounded-lg p-5 md:p-6">
+          <h2 class="text-base font-semibold text-dark mb-5 pb-3 border-b border-gray-line">Change Password</h2>
+          <form class="space-y-4" onsubmit="return false">
+                      <div>
+            <label class="block text-sm font-medium text-dark mb-1.5">Current Password</label>
+            <div class="relative">
+              <input type="password" name="current_password" placeholder="Password" class="w-full border border-gray-line rounded-md px-4 py-3 pr-11 text-sm outline-none focus:border-primary" />
+              <button type="button" data-pw-toggle aria-label="Show password" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            </div>
+          </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+            <label class="block text-sm font-medium text-dark mb-1.5">New Password</label>
+            <div class="relative">
+              <input type="password" name="new_password" placeholder="Password" class="w-full border border-gray-line rounded-md px-4 py-3 pr-11 text-sm outline-none focus:border-primary" />
+              <button type="button" data-pw-toggle aria-label="Show password" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            </div>
+          </div>
+                        <div>
+            <label class="block text-sm font-medium text-dark mb-1.5">Confirm Password</label>
+            <div class="relative">
+              <input type="password" name="confirm_password" placeholder="Password" class="w-full border border-gray-line rounded-md px-4 py-3 pr-11 text-sm outline-none focus:border-primary" />
+              <button type="button" data-pw-toggle aria-label="Show password" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+            </div>
+          </div>
+            </div>
+            <button class="bg-primary text-white text-sm font-semibold px-7 py-2.5 rounded-full hover:bg-primary-dark transition">Change Password</button>
+          </form>
+        </section>
+
       </div>
     </div>
   </main>
-
-  <!-- map -->
-  <div class="mt-4">
-    <iframe title="Store location map" src="https://www.openstreetmap.org/export/embed.html?bbox=-122.06%2C37.26%2C-121.78%2C37.44&amp;layer=mapnik&amp;marker=37.35%2C-121.92" class="w-full h-[420px] border-0" loading="lazy"></iframe>
-  </div>
 
   <section class="hp1-newsletter">
     <div class="max-w-container mx-auto px-4 py-10 grid md:grid-cols-2 gap-6 items-center">
